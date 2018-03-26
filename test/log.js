@@ -76,7 +76,7 @@ describe('Log', function () {
     })
 
     log.should.have.property('toJSON').and.be.constructor('function')
-    log.toJSON().should.equal('{"creator":{"version":"1.0","name":"test"},"pages":[],"entries":[]}')
+    log.toJSON().should.equal('{"log":{"creator":{"version":"1.0","name":"test"},"pages":[],"entries":[]}}')
 
     done()
   })
