@@ -69,6 +69,18 @@ describe('Log', function () {
     done()
   })
 
+  it('should export to JSON', function (done) {
+    var log = new HAR.Log({
+      version: '1.2',
+      creator: creator
+    })
+
+    log.should.have.property('toJSON').and.be.constructor('function')
+    log.toJSON().should.equal('{"creator":{"version":"1.0","name":"test"},"pages":[],"entries":[]}')
+
+    done()
+  })
+
   describe('Pages', function () {
     it('should add a single page using an object', function (done) {
       var page = {
